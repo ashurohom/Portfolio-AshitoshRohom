@@ -4,13 +4,8 @@ import './App.css'
 function App() {
   return (
     <>
-          <div className="text-center mt-10">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Hello, Tailwind is Working! 🚀
-      </h1>
-      <p className="mt-4 text-gray-600">
-        You’ve successfully installed Tailwind CSS in React Vite 🎉
-      </p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
+      <h1 className="text-white text-5xl font-bold">Tailwind v4 Working 🎉</h1>
     </div>
     </>
   )
