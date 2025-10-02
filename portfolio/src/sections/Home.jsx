@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import heroIllustration from "../assets/developer.svg"; // Your illustration
+import { FaArrowRight, FaDownload, FaEnvelope } from "react-icons/fa";
+
 
 const Home = () => {
   return (
@@ -15,7 +17,7 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl font-bold text-white"
         >
-          Hi, I&apos;m <span className="text-[#FF6B81]">Ashu</span>
+          Hi, I&apos;m <span className="text-[#FF6B81]">Ashitosh</span>
         </motion.h1>
 
         <motion.h2
@@ -27,7 +29,7 @@ const Home = () => {
           Software Developer | Web & Fullstack Enthusiast
         </motion.h2>
 
-        {/* Animated Tagline */}
+        {/* Animated Tagline */}            
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -40,31 +42,41 @@ const Home = () => {
 
         {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="mt-8 flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center"
         >
-          <a
+        {/* View Projects */}
+        <a
             href="#projects"
-            className="px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition"
-          >
-            View Projects
-          </a>
-          <a
+            className="w-fit px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition flex items-center gap-2"
+        >
+            <span>View Projects</span>
+            <FaArrowRight />
+        </a>
+
+        {/* Download Resume */}
+        <a
             href="/Ashu_Resume.pdf"
             download
-            className="px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition"
-          >
-            Download Resume
-          </a>
-          <a
+            className="w-fit px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition flex items-center gap-2"
+        >
+            <span>Resume</span>
+            <FaDownload />
+        </a>
+
+        {/* Contact Me */}
+        <a
             href="#contact"
-            className="px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition"
-          >
-            Contact Me
-          </a>
+            className="w-fit px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition flex items-center gap-2"
+        >
+            <span>Contact Me</span>
+            <FaEnvelope />
+        </a>
         </motion.div>
+
+
       </div>
 
       {/* Right Side - Illustration */}
