@@ -46,47 +46,12 @@ const Home = () => {
           Let&apos;s turn your ideas into reality.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* Social Links */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="mt-8 flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center"
-        >
-          {/* View Projects */}
-          <a
-            href="#projects"
-            className="w-52 px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition flex items-center gap-2 justify-center"
-          >
-            <span>View Projects</span>
-            <FaArrowRight />
-          </a>
-
-          {/* Download Resume */}
-          <a
-            href="/Ashu_Resume.pdf"
-            download
-            className="w-52 px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition flex items-center gap-2 justify-center"
-          >
-            <span>Resume</span>
-            <FaDownload />
-          </a>
-
-          {/* Contact Me */}
-          <a
-            href="#contact"
-            className="w-52 px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition flex items-center gap-2 justify-center"
-          >
-            <span>Contact Me</span>
-            <FaEnvelope />
-          </a>
-        </motion.div>
-
-        <motion.div
-        className="flex mt-6 gap-5 justify-center md:justify-start"
+        className="flex mt-8 mb-6 gap-5 justify-center md:justify-center" // mt-8 adds space above, mb-6 keeps space below before CTA buttons
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
         >
         {socialLinks.map((link, index) => (
             <motion.a
@@ -102,6 +67,45 @@ const Home = () => {
             </motion.a>
         ))}
         </motion.div>
+
+
+        {/* CTA Buttons */}
+        <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+        >
+        {/* View Projects */}
+        <a
+            href="#projects"
+            className="w-52 px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition flex items-center gap-2 justify-center"
+        >
+            <span>View Projects</span>
+            <FaArrowRight />
+        </a>
+
+        {/* Download Resume */}
+        <a
+            href="/Ashu_Resume.pdf"
+            download
+            className="w-52 px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition flex items-center gap-2 justify-center"
+        >
+            <span>Resume</span>
+            <FaDownload />
+        </a>
+
+        {/* Contact Me */}
+        <a
+            href="#contact"
+            className="w-52 px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition flex items-center gap-2 justify-center"
+        >
+            <span>Contact Me</span>
+            <FaEnvelope />
+        </a>
+        </motion.div>
+
+
 
 
       </div>
