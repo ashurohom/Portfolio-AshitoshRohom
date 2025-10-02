@@ -48,7 +48,7 @@ const Home = () => {
 
         {/* Social Links */}
         <motion.div
-        className="flex mt-8 mb-6 gap-5 justify-center md:justify-center" // mt-8 adds space above, mb-6 keeps space below before CTA buttons
+        className="flex mt-12 mb-8 gap-5 justify-center md:justify-center" // mt-8 adds space above, mb-6 keeps space below before CTA buttons
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.8 }}
