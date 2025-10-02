@@ -1,9 +1,11 @@
 import Navbar from "./components/Navbar";
+import Home from "./sections/Home";
 
 function App() {
   return (
     <div className="bg-white text-blue-900">
       <Navbar />
+      <Home />
 
       {/* Example sections for scroll testing */}
       <section id="home" className="h-screen flex justify-center items-center">
