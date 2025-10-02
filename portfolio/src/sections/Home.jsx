@@ -2,14 +2,16 @@ import { motion } from "framer-motion";
 import heroIllustration from "../assets/developer.svg"; // Your illustration
 import { FaArrowRight, FaDownload, FaEnvelope } from "react-icons/fa";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SiPeerlist } from "react-icons/si"; // Peerlist icon
 
 const Home = () => {
     const socialLinks = [
-        { icon: <FaGithub />, url: "https://github.com/ashurohom" },
-        { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashurohom" },
-        { icon: <FaTwitter />, url: "https://twitter.com/ashurohom" },
-        { icon: <FaEnvelope />, url: "mailto:ashu@example.com" },
-        ];
+    { icon: <FaGithub />, url: "https://github.com/ashurohom" },
+    { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashurohom" },
+    { icon: <FaTwitter />, url: "https://twitter.com/ashurohom" },
+    { icon: <SiPeerlist />, url: "https://peerlist.io/ashurohom" }, // Added Peerlist
+    { icon: <FaEnvelope />, url: "mailto:ashu@example.com" },
+    ];
 
   return (
     <section
@@ -33,7 +35,7 @@ const Home = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-xl md:text-2xl text-gray-300 mt-4"
         >
-          Software Developer | Backend Engineer (Python)
+          Software Developer | Backend Engineer
         </motion.h2>
 
         <motion.p
@@ -42,8 +44,8 @@ const Home = () => {
           transition={{ delay: 0.8, duration: 1 }}
           className="text-gray-400 mt-4 max-w-xl mx-auto md:mx-0"
         >
-          I build modern, responsive web applications using React, TailwindCSS, and cutting-edge technologies. 
-          Let&apos;s turn your ideas into reality.
+          I build modern, responsive web applications using Python, React, TailwindCSS, and cutting-edge technologies. 
+          Let's turn your ideas into reality.
         </motion.p>
 
         {/* Social Links */}
