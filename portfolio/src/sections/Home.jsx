@@ -2,12 +2,11 @@ import { motion } from "framer-motion";
 import heroIllustration from "../assets/developer.svg"; // Your illustration
 import { FaArrowRight, FaDownload, FaEnvelope } from "react-icons/fa";
 
-
 const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 bg-gradient-to-r from-[#0F172A] to-[#1E293B]"
+      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between px-6 lg:px-20 pt-20 md:pt-0 bg-gradient-to-r from-[#0F172A] to-[#1E293B]"
     >
       {/* Left Side - Text */}
       <div className="flex-1 text-center md:text-left mt-10 md:mt-0">
@@ -29,7 +28,6 @@ const Home = () => {
           Software Developer | Web & Fullstack Enthusiast
         </motion.h2>
 
-        {/* Animated Tagline */}            
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -42,41 +40,39 @@ const Home = () => {
 
         {/* CTA Buttons */}
         <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="mt-8 flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="mt-8 flex flex-col sm:flex-row gap-4 items-center md:items-start justify-center"
         >
-        {/* View Projects */}
-        <a
+          {/* View Projects */}
+          <a
             href="#projects"
-            className="w-fit px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition flex items-center gap-2"
-        >
+            className="w-52 px-6 py-3 bg-[#FF6B81] text-white font-semibold rounded-md hover:bg-[#ff4f6f] transition flex items-center gap-2 justify-center"
+          >
             <span>View Projects</span>
             <FaArrowRight />
-        </a>
+          </a>
 
-        {/* Download Resume */}
-        <a
+          {/* Download Resume */}
+          <a
             href="/Ashu_Resume.pdf"
             download
-            className="w-fit px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition flex items-center gap-2"
-        >
+            className="w-52 px-6 py-3 border border-[#FF6B81] text-[#FF6B81] font-semibold rounded-md hover:bg-[#FF6B81] hover:text-white transition flex items-center gap-2 justify-center"
+          >
             <span>Resume</span>
             <FaDownload />
-        </a>
+          </a>
 
-        {/* Contact Me */}
-        <a
+          {/* Contact Me */}
+          <a
             href="#contact"
-            className="w-fit px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition flex items-center gap-2"
-        >
+            className="w-52 px-6 py-3 bg-[#06B6D4] text-white font-semibold rounded-md hover:bg-[#0EA5E9] transition flex items-center gap-2 justify-center"
+          >
             <span>Contact Me</span>
             <FaEnvelope />
-        </a>
+          </a>
         </motion.div>
-
-
       </div>
 
       {/* Right Side - Illustration */}
@@ -84,7 +80,7 @@ const Home = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="flex-1 flex justify-center md:justify-end"
+        className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0"
       >
         <img
           src={heroIllustration}
