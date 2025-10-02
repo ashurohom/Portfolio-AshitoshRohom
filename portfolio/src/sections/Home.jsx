@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import heroIllustration from "../assets/developer.svg"; // Your illustration
 import { FaArrowRight, FaDownload, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Home = () => {
+    const socialLinks = [
+        { icon: <FaGithub />, url: "https://github.com/ashurohom" },
+        { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashurohom" },
+        { icon: <FaTwitter />, url: "https://twitter.com/ashurohom" },
+        { icon: <FaEnvelope />, url: "mailto:ashu@example.com" },
+        ];
+
   return (
     <section
       id="home"
@@ -73,6 +81,29 @@ const Home = () => {
             <FaEnvelope />
           </a>
         </motion.div>
+
+        <motion.div
+        className="flex mt-6 gap-5 justify-center md:justify-start"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        >
+        {socialLinks.map((link, index) => (
+            <motion.a
+            key={index}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            whileTap={{ scale: 0.9 }}
+            className="text-gray-300 hover:text-[#FF6B81] text-2xl transition"
+            >
+            {link.icon}
+            </motion.a>
+        ))}
+        </motion.div>
+
+
       </div>
 
       {/* Right Side - Illustration */}
@@ -88,6 +119,18 @@ const Home = () => {
           className="w-80 md:w-[400px] lg:w-[500px]"
         />
       </motion.div>
+
+
+
+      {/* <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-2xl"
+        >
+        ⬇
+        </motion.div> */}
+
+
     </section>
   );
 };
