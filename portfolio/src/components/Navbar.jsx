@@ -46,29 +46,41 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      {isOpen && (
+
+        {/* Mobile Dropdown Menu (Compact with Logo) */}
+        {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-white shadow-md"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-16 left-0 w-full bg-white shadow-lg py-6 flex flex-col items-center space-y-5 md:hidden z-40"
         >
-          <ul className="flex flex-col space-y-3 py-4 px-6">
+            {/* Logo (optional for mobile menu)
+            <div className="flex items-center space-x-2 mb-2">
+            <img
+                src="/logo.png" // 🔹 replace with your actual logo path
+                alt="Logo"
+                className="h-8 w-8 object-contain"
+            />
+            <span className="text-xl font-semibold text-blue-900">Ashu</span>
+            </div> */}
+
+            {/* Navigation Links */}
             {navLinks.map((link) => (
-              <li key={link}>
-                <a
-                  href={`#${link.toLowerCase()}`}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-blue-900 hover:text-blue-500 transition font-medium"
-                >
-                  {link}
-                </a>
-              </li>
+            <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-blue-900 hover:text-blue-500 font-medium transition"
+            >
+                {link}
+            </a>
             ))}
-          </ul>
         </motion.div>
-      )}
+        )}
+
+
+
     </motion.nav>
   );
 };
