@@ -1,14 +1,30 @@
-import React from 'react'
-import './App.css'
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <>
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
-      <h1 className="text-white text-5xl font-bold">Tailwind v4 Working 🎉</h1>
+    <div className="bg-white text-blue-900">
+      <Navbar />
+
+      {/* Example sections for scroll testing */}
+      <section id="home" className="h-screen flex justify-center items-center">
+        <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1>
+      </section>
+
+      <section
+        id="about"
+        className="h-screen flex justify-center items-center bg-blue-50"
+      >
+        <h1 className="text-4xl font-semibold">About Me</h1>
+      </section>
+
+      <section
+        id="projects"
+        className="h-screen flex justify-center items-center bg-blue-100"
+      >
+        <h1 className="text-4xl font-semibold">Projects</h1>
+      </section>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
