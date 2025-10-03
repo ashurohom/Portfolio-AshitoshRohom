@@ -13,19 +13,16 @@ const AboutMe = () => {
   ];
 
   const skills = [
-    { name: "Python", level: 90 },
-    { name: "Django", level: 85 },
-    { name: "React", level: 80 },
-    { name: "JavaScript", level: 85 },
-    { name: "TailwindCSS", level: 75 },
-    { name: "PostgreSQL", level: 70 },
+    "Python", "Django", "React", "JavaScript", 
+    "TailwindCSS", "PostgreSQL", "DRF", "REST APIs",
+    "Git", "Docker", "AWS", "Linux"
   ];
 
   const stats = [
-    { number: "2+", label: "Years Experience" },
-    { number: "50+", label: "Projects Completed" },
-    { number: "15+", label: "Happy Clients" },
+    { number: "1+", label: "Years Experience" },
+    { number: "20+", label: "Projects Completed" },
     { number: "10+", label: "Technologies" },
+    { number: "10+", label: "Certificate" },
   ];
 
   return (
@@ -39,29 +36,6 @@ const AboutMe = () => {
         <div className="absolute top-1/3 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000"></div>
         <div className="absolute top-1/2 left-20 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000"></div>
-      </div>
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-40"
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.4, 0.8, 0.4],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
@@ -93,14 +67,7 @@ const AboutMe = () => {
               </div>
             </div>
 
-            {/* Floating Elements */}
-            <motion.div
-              className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg"
-              whileHover={{ scale: 1.1, rotate: 10 }}
-            >
-              <span className="text-black font-bold text-sm">🚀</span>
-            </motion.div>
-
+            {/* Single Floating Element (Only 💻 remains) */}
             <motion.div
               className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center shadow-lg"
               whileHover={{ scale: 1.1, rotate: -10 }}
@@ -218,57 +185,26 @@ const AboutMe = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="space-y-4"
+                  className="grid grid-cols-2 sm:grid-cols-3 gap-4"
                 >
                   {skills.map((skill, index) => (
                     <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.1 }}
-                      className="space-y-2"
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 hover:border-cyan-400 transition-all duration-300"
                     >
-                      <div className="flex justify-between text-gray-300">
-                        <span>{skill.name}</span>
-                        <span>{skill.level}%</span>
-                      </div>
-                      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ delay: index * 0.1 + 0.5, duration: 1 }}
-                          className="h-full bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"
-                        />
-                      </div>
+                      <span className="text-gray-300 font-medium text-sm md:text-base">
+                        {skill}
+                      </span>
                     </motion.div>
                   ))}
                 </motion.div>
               )}
             </div>
           </div>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex space-x-4"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
-            >
-              Download CV
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300"
-            >
-              Contact Me
-            </motion.button>
-          </motion.div>
         </motion.div>
       </div>
     </section>
