@@ -7,10 +7,10 @@ import { SiPeerlist } from "react-icons/si"; // Peerlist icon
 const Home = () => {
     const socialLinks = [
     { icon: <FaGithub />, url: "https://github.com/ashurohom" },
-    { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashurohom" },
-    { icon: <FaTwitter />, url: "https://twitter.com/ashurohom" },
-    { icon: <SiPeerlist />, url: "https://peerlist.io/ashurohom" }, // Added Peerlist
-    { icon: <FaEnvelope />, url: "mailto:ashu@example.com" },
+    { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashitoshrohom" },
+    { icon: <FaTwitter />, url: "https://twitter.com/ashitoshrohom" },
+    { icon: <SiPeerlist />, url: "https://peerlist.io/ashitoshrohom" }, // Added Peerlist
+    { icon: <FaEnvelope />, url: "mailto:ashitosh.rohom@gmail.com" },
     ];
 
   return (

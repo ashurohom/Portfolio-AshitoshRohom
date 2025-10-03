@@ -26,7 +26,7 @@ const Navbar = () => {
             transition={{ type: "spring", stiffness: 300 }}
           />
           <h1 className="text-white text-2xl font-bold tracking-wider">
-            Ashu<span className="text-[#FF6B81]"></span>
+            ®Ashu<span className="text-[#FF6B81]"></span>
           </h1>
         </div>
 
