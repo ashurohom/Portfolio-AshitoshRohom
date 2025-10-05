@@ -4,6 +4,8 @@ import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight, FaCode, FaEye }
 import GE from "../assets/GE.png";
 import portfolio from "../assets/portfolio.png";
 import mybuddy from "../assets/mybuddy.png";
+import blog from "../assets/blog.png";
+import easymart from "../assets/easymart.jpeg";
 
 const projects = [
   {
@@ -35,26 +37,27 @@ const projects = [
     tech: ["Python","Django","HTML","CSS", "SQLite","Razorpay API","E-Mail"],
     github: "https://github.com/ashurohom/MyBuddyProject",
     image: mybuddy,
-    category: "fullstack"
+    category: "fullstack",
+    featured: true
   },
   {
-    name: "Contact Book App",
+    name: "Blog App",
     description:
-      "Full-stack contact management application with intuitive UI, real-time search, and comprehensive CRUD operations for personal and professional use.",
-    tech: ["Django", "HTML", "JavaScript", "CSS"],
-    github: "https://github.com/ashurohom/contact-book",
-    image: "https://via.placeholder.com/400x250/ea580c/ffffff?text=Contact+Manager",
+      "A Full-Stack Blog Web Application built using Django, Django REST Framework, HTML, CSS, and JavaScript.This app allows users to Create, Read, Update, and Delete (CRUD) blog posts through a user-friendly interface.",
+    tech: ["Python","Django","JavaScript","HTML","CSS", "SQLite","Git"],
+    github: "https://github.com/ashurohom/Blog-API",
+    image: blog,
     category: "fullstack"
   },
   {
-    name: "Portfolio Website",
+    name: "Easy Mart eCommerce",
     description:
       "Modern responsive portfolio website showcasing projects, skills, and professional journey with smooth animations and optimized performance.",
-    tech: ["React", "TailwindCSS", "Framer Motion"],
+    tech: ["Python","Django","HTML","CSS", "SQLite","Razorpay API","E-Mail"],
     github: "https://github.com/ashurohom/portfolio",
-    image: "https://via.placeholder.com/400x250/0ea5e9/ffffff?text=Portfolio",
-    category: "frontend",
-    featured: true
+    image: easymart,
+    category: "fullstack",
+    
   },
   {
     name: "E-commerce Backend",
