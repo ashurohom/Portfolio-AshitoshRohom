@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight, FaCode, FaEye } from "react-icons/fa";
 import GE from "../assets/GE.png";
+import portfolio from "../assets/portfolio.png";
 
 const projects = [
   {
@@ -15,16 +16,17 @@ const projects = [
     category: "web",
     featured: true
   },
-  {
-    name: "Customer Pricing Module - Odoo 17",
+    {
+    name: "Portfolio-Ashitosh",
     description:
-      "Enterprise-grade Odoo module implementing dynamic pricing strategies, customer-specific discounts, and automated quotation generation for business workflow optimization.",
-    tech: ["Python", "Odoo", "PostgreSQL", "XML"],
-    github: "https://github.com/ashurohom/odoo-customer-pricing",
-    image: "https://via.placeholder.com/400x250/0f766e/ffffff?text=Odoo+ERP",
-    category: "backend",
+"Professional portfolio demonstrating full-stack capabilities through modern design and optimized performance.",
+    tech: ["React", "TailwindCSS", "Framer Motion", "JavaScript"],
+    live: "https://yourportfolio.netlify.app/", // Update with your actual portfolio URL
+    github: "https://github.com/ashurohom/Portfolio-AshitoshRohom", 
+    image: portfolio,
+    category: "frontend",
     featured: true
-  },
+    },
   {
     name: "Blog API Platform",
     description:
