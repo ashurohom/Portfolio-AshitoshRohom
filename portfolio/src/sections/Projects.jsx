@@ -6,6 +6,7 @@ import portfolio from "../assets/portfolio.png";
 import mybuddy from "../assets/mybuddy.png";
 import blog from "../assets/blog.png";
 import easymart from "../assets/easymart.jpeg";
+import library from "../assets/library.png";
 
 const projects = [
   {
@@ -62,10 +63,10 @@ const projects = [
   {
     name: "Library Store System",
     description:
-      "Scalable e-commerce backend with product management, order processing, and payment integration using Django REST Framework.",
+      "The Library Management System is a web-based app built with Django and DRF. It enables efficient book management with features to add, update, and delete records, while ensuring data security through authentication, validation, and CSRF protection mechanisms.",
     tech: ["Python","Django","HTML","CSS", "SQLite"],
-    github: "https://github.com/ashurohom/ecommerce-backend",
-    image: "https://via.placeholder.com/400x250/d946ef/ffffff?text=E-commerce+API",
+    github: "https://github.com/ashurohom/-Library-Management-System",
+    image: library,
     category: "backend"
   },
 ];
