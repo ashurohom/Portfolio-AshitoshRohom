@@ -1,16 +1,17 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight, FaCode, FaEye } from "react-icons/fa";
+import GE from "../assets/GE.png";
 
 const projects = [
   {
     name: "Gurudatt Electrical Website",
     description:
       "A modern business portfolio website for an electrical company featuring responsive design, service showcase, and contact management built with pure web technologies.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    live: "https://gurudatt-electrical.netlify.app",
+    tech: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
+    live: "https://gurudattelectrical.netlify.app/",
     github: "https://github.com/ashurohom/Gurudatt-Electrical",
-    image: "https://via.placeholder.com/400x250/1e293b/ffffff?text=Gurudatt+Electrical",
+    image: GE,
     category: "web",
     featured: true
   },
@@ -248,30 +249,34 @@ const Projects = () => {
                       ))}
                     </div>
 
-                    {/* Action Buttons */}
+                    {/* Action Buttons - Updated to motion.a for better performance */}
                     <div className="flex gap-3">
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                    {project.live && (
+                        <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 shadow-lg shadow-cyan-500/25"
                         >
-                          <FaExternalLinkAlt className="text-xs" />
-                          Live Demo
-                        </a>
-                      )}
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 border border-white/20"
+                        <FaExternalLinkAlt className="text-xs" />
+                        Live Demo
+                        </motion.a>
+                    )}
+                    {project.github && (
+                        <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-2.5 px-4 rounded-xl text-sm font-semibold transition-all duration-300 border border-white/20"
                         >
-                          <FaGithub />
-                          Code
-                        </a>
-                      )}
+                        <FaGithub />
+                        Code
+                        </motion.a>
+                    )}
                     </div>
                   </div>
 
