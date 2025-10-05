@@ -52,18 +52,18 @@ const projects = [
   {
     name: "Easy Mart eCommerce",
     description:
-      "Modern responsive portfolio website showcasing projects, skills, and professional journey with smooth animations and optimized performance.",
+      "eCommerce Website is a comprehensive online store platform dedicated to providing a seamless shopping experience. It allows users to browse and purchase products, manage orders, and support the site’s various features.",
     tech: ["Python","Django","HTML","CSS", "SQLite","Razorpay API","E-Mail"],
-    github: "https://github.com/ashurohom/portfolio",
+    github: "https://github.com/ashurohom/E-Commerce-Website",
     image: easymart,
     category: "fullstack",
     
   },
   {
-    name: "E-commerce Backend",
+    name: "Library Store System",
     description:
       "Scalable e-commerce backend with product management, order processing, and payment integration using Django REST Framework.",
-    tech: ["Django", "DRF", "PostgreSQL", "Stripe API"],
+    tech: ["Python","Django","HTML","CSS", "SQLite"],
     github: "https://github.com/ashurohom/ecommerce-backend",
     image: "https://via.placeholder.com/400x250/d946ef/ffffff?text=E-commerce+API",
     category: "backend"
