@@ -48,32 +48,26 @@ const AboutMe = () => {
         >
           <div className="relative group">
             {/* Main Image Container */}
-            <div className="relative w-80 h-80 mx-auto lg:mx-0">
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:blur-xl"
+            <div className="relative mx-auto lg:mx-0 flex justify-center">
+              {/* Fixed rotating background - smaller size */}
+              {/* <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:blur-xl w-[340px] h-[340px] -z-10"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              />
+              /> */}
               
-              <div className="relative w-80 h-80 rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl">
+              {/* Image Container */}
+              <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl inline-block max-w-full">
                 <img
                   src={myPhoto}
                   alt="Ashitosh"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                  className="max-w-[320px] max-h-[320px] w-auto h-auto object-contain transform group-hover:scale-110 transition duration-700"
                 />
                 
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
               </div>
             </div>
-
-            {/* Single Floating Element (Only 💻 remains) */}
-            <motion.div
-              className="absolute -bottom-4 -left-4 w-16 h-16 bg-green-400 rounded-2xl flex items-center justify-center shadow-lg"
-              whileHover={{ scale: 1.1, rotate: -10 }}
-            >
-              <span className="text-black font-bold text-sm">💻</span>
-            </motion.div>
           </div>
 
           {/* Stats Grid */}
@@ -132,11 +126,20 @@ const AboutMe = () => {
             transition={{ delay: 0.4 }}
             className="text-gray-300 text-lg leading-relaxed bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
           >
-            Hello! I'm a passionate developer who enjoys solving real-world problems
-            through clean and efficient code. My journey began with curiosity, and it
-            has grown into a commitment to building modern, high-performance
-            applications that create real impact.
+            I’m a Software Developer with over a year of experience, currently working at a
+            growing startup where I specialize in building Python-based backend systems.
+            My journey with computers began during my school days at home — inspired by my
+            brother, who is also a software developer. I hold a B.Tech in Computer Engineering
+            and have always been passionate about full-stack development, enjoying both the
+            frontend creativity and backend logic.  
+            <br /><br />
+            What sets me apart is my constant curiosity, problem-solving mindset, and belief
+            in writing clean, meaningful code that makes an impact. Beyond technology, I love
+            exploring networks, visiting temples, and find peace in devotion to Lord Krishna.
+            I aim to grow continuously, achieve big milestones, and make a lasting mark in
+            the tech world.
           </motion.p>
+
 
           {/* Tabs Section */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
