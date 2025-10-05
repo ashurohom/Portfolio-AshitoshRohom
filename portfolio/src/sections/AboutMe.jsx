@@ -3,10 +3,10 @@ import myPhoto from "../assets/Ashitosh.png";
 import { useState } from "react";
 
 const AboutMe = () => {
-  const [activeTab, setActiveTab] = useState("skills");
+  const [activeTab, setActiveTab] = useState("highlights");
 
   const highlights = [
-    "Software Developer at XYZ Company",
+    "Software Developer at DREAMWAREZ Company",
     "Passionate about backend and full-stack development",
     "Proficient in Python, Django, React, DRF, TailwindCSS",
     "Always exploring new technologies and improving daily",
@@ -14,8 +14,8 @@ const AboutMe = () => {
 
   const skills = [
     "Python", "Django", "React", "JavaScript", 
-    "TailwindCSS", "PostgreSQL", "DRF", "REST APIs",
-    "Git", "Docker", "AWS", "Linux"
+    "TailwindCSS","SQL", "PostgreSQL", "DRF", "REST APIs",
+    "Git", "Netlify", "Linux"
   ];
 
   const stats = [
@@ -38,30 +38,22 @@ const AboutMe = () => {
         <div className="absolute top-1/2 left-20 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
-        {/* Left Side - Enhanced Profile Card */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 items-center z-10">
+        {/* Left Side - Reduced width for photo and stats */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="lg:col-span-2 relative"
         >
           <div className="relative group">
-            {/* Main Image Container */}
+            {/* Image Container - Reduced size for laptop */}
             <div className="relative mx-auto lg:mx-0 flex justify-center">
-              {/* Fixed rotating background - smaller size */}
-              {/* <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-3xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:blur-xl w-[340px] h-[340px] -z-10"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              /> */}
-              
-              {/* Image Container */}
               <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl inline-block max-w-full">
                 <img
                   src={myPhoto}
                   alt="Ashitosh"
-                  className="max-w-[320px] max-h-[320px] w-auto h-auto object-contain transform group-hover:scale-110 transition duration-700"
+                  className="max-w-[280px] max-h-[280px] w-auto h-auto object-contain transform group-hover:scale-110 transition duration-700"
                 />
                 
                 {/* Overlay Gradient */}
@@ -70,32 +62,32 @@ const AboutMe = () => {
             </div>
           </div>
 
-          {/* Stats Grid */}
+          {/* Stats Grid - Reduced size */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="grid grid-cols-2 gap-4 mt-8"
+            className="grid grid-cols-2 gap-3 mt-6"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center border border-white/20"
               >
-                <div className="text-2xl font-bold text-cyan-400">{stat.number}</div>
-                <div className="text-gray-300 text-sm">{stat.label}</div>
+                <div className="text-xl font-bold text-cyan-400">{stat.number}</div>
+                <div className="text-gray-300 text-xs">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* Right Side - Enhanced Content */}
+        {/* Right Side - Increased width for content */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-8"
+          className="lg:col-span-3 space-y-8"
         >
           {/* Header */}
           <div>
@@ -120,28 +112,32 @@ const AboutMe = () => {
           </div>
 
           {/* Description */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-gray-300 text-lg leading-relaxed bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
           >
-            I’m a Software Developer with over a year of experience, currently working at a
-            growing startup where I specialize in building Python-based backend systems.
-            My journey with computers began during my school days at home — inspired by my
-            brother, who is also a software developer. I hold a B.Tech in Computer Engineering
-            and have always been passionate about full-stack development, enjoying both the
-            frontend creativity and backend logic.  
-            <br /><br />
-            What sets me apart is my constant curiosity, problem-solving mindset, and belief
-            in writing clean, meaningful code that makes an impact. Beyond technology, I love
-            exploring networks, visiting temples, and find peace in devotion to Lord Krishna.
-            I aim to grow continuously, achieve big milestones, and make a lasting mark in
-            the tech world.
-          </motion.p>
+            <p className="text-gray-300 text-lg leading-relaxed space-y-4 text-justify">
+              <span className="block">
+                I'm a Software Developer with over a year of experience, currently working at a
+                growing startup where I specialize in building Python-based backend systems.
+                My journey with computers began during my school days at home — inspired by my
+                brother, who is also a software developer.
+                I hold a B.Tech in Computer Engineering and have always been passionate about 
+                full-stack development, enjoying both the frontend creativity and backend logic.
+              
+                What sets me apart is my constant curiosity, problem-solving mindset, and belief
+                in writing clean, meaningful code that makes an impact. Beyond technology, I love
+                exploring networks, visiting temples, and find peace in devotion to Lord Krishna.
+              
+                I aim to grow continuously, achieve big milestones, and make a lasting mark in
+                the tech world.
+              </span>
+            </p>
+          </motion.div>
 
-
-          {/* Tabs Section */}
+          {/* Tabs Section - Increased width */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
             {/* Tab Headers */}
             <div className="flex space-x-4 mb-6">
@@ -160,7 +156,7 @@ const AboutMe = () => {
               ))}
             </div>
 
-            {/* Tab Content */}
+            {/* Tab Content - More space for highlights */}
             <div className="min-h-[200px]">
               {activeTab === "highlights" && (
                 <motion.ul
@@ -175,10 +171,10 @@ const AboutMe = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ x: 10 }}
-                      className="flex items-center text-gray-300 hover:text-white transition-colors duration-300"
+                      className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 text-base"
                     >
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full mr-4" />
-                      {item}
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mr-4 flex-shrink-0" />
+                      <span className="leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -188,7 +184,7 @@ const AboutMe = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+                  className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
                 >
                   {skills.map((skill, index) => (
                     <motion.div
