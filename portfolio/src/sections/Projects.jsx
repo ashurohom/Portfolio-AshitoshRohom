@@ -7,12 +7,13 @@ import mybuddy from "../assets/mybuddy.png";
 import blog from "../assets/blog.png";
 import easymart from "../assets/easymart.jpeg";
 import library from "../assets/library.png";
+import corn from "../assets/corn.jpeg";
 
 const projects = [
   {
     name: "Gurudatt Electrical Website",
     description:
-      "A modern business portfolio website for an electrical company featuring responsive design, service showcase, and contact management built with pure web technologies.",
+      "Gurudatt Electrical is a modern business portfolio website designed for an electrical company. It features a responsive layout, service showcase, and contact management system, all built using pure web technologies to ensure performance, accessibility, and a professional online presence.",
     tech: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
     live: "https://gurudattelectrical.netlify.app/",
     github: "https://github.com/ashurohom/Gurudatt-Electrical",
@@ -23,7 +24,7 @@ const projects = [
     {
     name: "Portfolio-Ashitosh",
     description:
-"Professional portfolio demonstrating full-stack capabilities through modern design and optimized performance.",
+      "A professional portfolio showcasing full-stack development expertise with a focus on modern design, responsive layouts, and optimized performance. It highlights projects built using React, Django, and TailwindCSS, reflecting creativity, technical proficiency, and a passion for delivering impactful digital solutions.",
     tech: ["React", "TailwindCSS", "Framer Motion", "JavaScript"],
     live: "https://yourportfolio.netlify.app/", // Update with your actual portfolio URL
     github: "https://github.com/ashurohom/Portfolio-AshitoshRohom", 
@@ -67,6 +68,15 @@ const projects = [
     tech: ["Python","Django","HTML","CSS", "SQLite"],
     github: "https://github.com/ashurohom/-Library-Management-System",
     image: library,
+    category: "backend"
+  },
+  {
+    name: "Corn-Leaves-Diseases-Detection",
+    description:
+      "Corn Leaf Disease Detection is a deep learning-based web app built with Flask and VGG16. It identifies three major maize leaf diseases—Grey Leaf Spot, Northern Corn Leaf Blight, and Common Rust—using a trained CNN model for sustainable agriculture.",
+    tech: ["Numpy","Tensorflw","Flask","VGG 16","CNN","Python","HTML","CSS"],
+    github: "https://github.com/ashurohom/B.Tech-Project",
+    image: corn,
     category: "backend"
   },
 ];
