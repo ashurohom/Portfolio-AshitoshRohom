@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight, FaCode, FaEye } from "react-icons/fa";
 import GE from "../assets/GE.png";
 import portfolio from "../assets/portfolio.png";
+import mybuddy from "../assets/mybuddy.png";
 
 const projects = [
   {
@@ -28,13 +29,13 @@ const projects = [
     featured: true
     },
   {
-    name: "Blog API Platform",
+    name: "My Buddy",
     description:
-      "RESTful API platform with JWT authentication, user management, and comprehensive blog operations including CRUD, filtering, and search functionality.",
-    tech: ["Django REST Framework", "SQLite", "JWT", "Python"],
-    github: "https://github.com/ashurohom/blog-api-platform",
-    image: "https://via.placeholder.com/400x250/7e22ce/ffffff?text=Blog+API",
-    category: "backend"
+      "My Buddy is a responsive pet adoption website that connects users with pets available for adoption. It features detailed pet profiles, adoption requests, and a clean, user-friendly interface built to simplify and promote the pet adoption process online.",
+    tech: ["Python","Django","HTML","CSS", "SQLite","Razorpay API","E-Mail"],
+    github: "https://github.com/ashurohom/MyBuddyProject",
+    image: mybuddy,
+    category: "fullstack"
   },
   {
     name: "Contact Book App",
