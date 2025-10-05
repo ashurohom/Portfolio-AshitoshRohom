@@ -53,11 +53,11 @@ const AboutMe = () => {
                 <img
                   src={myPhoto}
                   alt="Ashitosh"
-                  className="max-w-[280px] max-h-[280px] w-auto h-auto object-contain transform group-hover:scale-110 transition duration-700"
+                  className="max-w-[280px] max-h-[280px] w-auto h-auto object-contain transform group-hover:scale-103 transition duration-700"
                 />
                 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
               </div>
             </div>
           </div>
