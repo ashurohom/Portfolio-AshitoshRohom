@@ -14,7 +14,7 @@ const projects = [
     name: "Gurudatt Electrical Website",
     description:
       "Gurudatt Electrical is a modern business portfolio website designed for an electrical company. It features a responsive layout, service showcase, and contact management system, all built using pure web technologies to ensure performance, accessibility, and a professional online presence.",
-    tech: ["React", "JavaScript", "Tailwind CSS", "Netlify"],
+    tech: ["React", "JavaScript", "Tailwind CSS", "Git", "Netlify"],
     live: "https://gurudattelectrical.netlify.app/",
     github: "https://github.com/ashurohom/Gurudatt-Electrical",
     image: GE,
@@ -24,7 +24,7 @@ const projects = [
     {
     name: "Portfolio-Ashitosh",
     description:
-      "A professional portfolio showcasing full-stack development expertise with a focus on modern design, responsive layouts, and optimized performance. It highlights projects built using React, Django, and TailwindCSS, reflecting creativity, technical proficiency, and a passion for delivering impactful digital solutions.",
+      "A professional portfolio showcasing full-stack development expertise with a focus on modern design, responsive layouts, and optimized performance. It highlights projects built using React, Django, and TailwindCSS, reflecting creativity, technical proficiency.",
     tech: ["React", "TailwindCSS", "Framer Motion", "JavaScript"],
     live: "https://yourportfolio.netlify.app/", // Update with your actual portfolio URL
     github: "https://github.com/ashurohom/Portfolio-AshitoshRohom", 
@@ -331,7 +331,7 @@ const Projects = () => {
         >
           <p className="text-gray-400 text-sm flex items-center justify-center gap-2">
             <span className="animate-bounce">←</span>
-            Scroll or use arrows to explore more projects
+            "Crafting ideas into powerful digital experiences."
             <span className="animate-bounce animation-delay-1000">→</span>
           </p>
         </motion.div>
