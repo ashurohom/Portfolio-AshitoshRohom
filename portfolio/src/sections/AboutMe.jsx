@@ -62,6 +62,17 @@ const AboutMe = () => {
             </div>
           </div>
 
+          {/* Name below photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="text-center mt-6"
+          >
+            <h3 className="text-2xl font-bold text-white">Ashitosh Baban Rohom</h3>
+            <p className="text-cyan-400 text-sm mt-2">Software Developer</p>
+          </motion.div>
+
           {/* Stats Grid - Reduced size */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
