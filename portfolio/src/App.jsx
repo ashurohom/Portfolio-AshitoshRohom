@@ -1,8 +1,10 @@
+import { i } from "framer-motion/client";
 import Navbar from "./components/Navbar";
 import AboutMe from "./sections/AboutMe";
 import Experience from "./sections/Experience";
 import Home from "./sections/Home";
 import Projects from "./sections/Projects";
+import Education from "./sections/Education";
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <AboutMe />
       <Projects />
       <Experience />
+      <Education />
 
       {/* Example sections for scroll testing */}
       <section id="home" className="h-screen flex justify-center items-center">
@@ -24,20 +27,8 @@ function App() {
       >
         <h1 className="text-4xl font-semibold">About Me</h1>
       </section>
-
-      <section
-        id="projects"
-        className="h-screen flex justify-center items-center bg-blue-100"
-      >
-        <h1 className="text-4xl font-semibold">Projects</h1>
-      </section>
       
-      <section
-        id="contact"
-        className="h-screen flex justify-center items-center bg-blue-100"
-      >
-        <h1 className="text-4xl font-semibold">Contact</h1>
-      </section>
+
     </div>
   );
 }
