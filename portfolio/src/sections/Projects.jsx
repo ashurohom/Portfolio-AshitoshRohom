@@ -133,7 +133,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl lg:text-6xl font-extrabold mb-6">
-            My <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
+             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             A collection of my recent work showcasing full-stack development, 
