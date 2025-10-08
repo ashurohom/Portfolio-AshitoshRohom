@@ -5,6 +5,7 @@ import Experience from "./sections/Experience";
 import Home from "./sections/Home";
 import Projects from "./sections/Projects";
 import Education from "./sections/Education";
+import Contact from "./sections/Contact";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Projects />
       <Experience />
       <Education />
+      <Contact />
 
       {/* Example sections for scroll testing */}
       <section id="home" className="h-screen flex justify-center items-center">
