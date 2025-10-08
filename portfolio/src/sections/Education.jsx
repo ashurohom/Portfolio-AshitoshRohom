@@ -252,7 +252,7 @@ const Education = () => {
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition-all duration-300"
               >
                 <FaLinkedin className="text-xl" />
-                View All Certificates on LinkedIn
+                LinkedIn
               </motion.a>
             </motion.div>
           </div>

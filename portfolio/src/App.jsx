@@ -28,7 +28,7 @@ function App() {
         <h1 className="text-4xl font-semibold">About Me</h1>
       </section>
       
-
+{/* Comment */}
     </div>
   );
 }
