@@ -1,7 +1,15 @@
-import { motion } from "framer-motion";
-import { FaGraduationCap, FaCertificate, FaExternalLinkAlt, FaUniversity, FaCalendar, FaStar, FaLinkedin } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGraduationCap, FaCertificate, FaExternalLinkAlt, FaUniversity, FaCalendar, FaStar, FaLinkedin, FaTimes } from "react-icons/fa";
+import { useState } from "react";
+
+// Import your certificate images
+import certificate1 from "../assets/certificate1.png";
+import certificate2 from "../assets/certificate2.jpeg";
+import certificate3 from "../assets/certificate3.png";
 
 const Education = () => {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
   const education = [
     {
       degree: "Bachelor of Technology (B.Tech) in Computer Engineering",
@@ -19,7 +27,7 @@ const Education = () => {
       platform: "EconomicTimes",
       description:
         "Certificate for exceptional performance in Phase 3 of ET Campus Stars 2022-23, India's largest hunt for brightest engineering minds.",
-      link: "#",
+      image: certificate1,
       featured: true,
     },
     {
@@ -27,7 +35,7 @@ const Education = () => {
       platform: "Sanjivani College of Engineering (Sponsored by Automation AI)",
       description:
         "Awarded for successfully completing the company-sponsored B.Tech final year project titled 'Corn Leaves Disease Detection Using Deep Learning.'",
-      link: "#",
+      image: certificate2,
       featured: true,
     },
     {
@@ -35,10 +43,18 @@ const Education = () => {
       platform: "ITVedant",
       description:
         "Hands-on course focused on building RESTful APIs using Django and DRF with authentication and deployment.",
-      link: "#",
+      image: certificate3,
       featured: false,
     },
   ];
+
+  const openCertificate = (certificate) => {
+    setSelectedCertificate(certificate);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
+  };
 
   return (
     <section
@@ -215,17 +231,15 @@ const Education = () => {
                   </div>
 
                   {/* View Certificate Button */}
-                  <motion.a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <motion.button
+                    onClick={() => openCertificate(cert)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-2 rounded-xl border border-white/20 transition-all duration-300 mt-auto"
                   >
                     View Certificate
                     <FaExternalLinkAlt className="text-xs" />
-                  </motion.a>
+                  </motion.button>
 
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
@@ -258,6 +272,60 @@ const Education = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Certificate Popup Modal */}
+      <AnimatePresence>
+        {selectedCertificate && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={closeCertificate}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              className="relative max-w-4xl max-h-[90vh] bg-white rounded-3xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <motion.button
+                onClick={closeCertificate}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="absolute top-4 right-4 z-10 bg-black/50 text-white p-3 rounded-full backdrop-blur-sm border border-white/20 hover:bg-black/70 transition-all duration-300"
+              >
+                <FaTimes className="text-xl" />
+              </motion.button>
+
+              {/* Certificate Image */}
+              <div className="max-h-[80vh] overflow-auto">
+                <img
+                  src={selectedCertificate.image}
+                  alt={selectedCertificate.name}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Certificate Info */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {selectedCertificate.name}
+                </h3>
+                <p className="text-cyan-400 font-medium mb-1">
+                  {selectedCertificate.platform}
+                </p>
+                <p className="text-gray-300 text-sm">
+                  {selectedCertificate.description}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
