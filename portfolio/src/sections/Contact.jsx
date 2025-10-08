@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
+import { SiPeerlist } from "react-icons/si";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -77,6 +78,11 @@ const Contact = () => {
       url: "https://twitter.com/ashitoshrohom",
       name: "Twitter",
       color: "hover:text-sky-400"
+    },
+    { icon: <SiPeerlist />, 
+      url: "https://peerlist.io/ashitoshrohom", 
+      name: "Peerlist", 
+      color: "hover:text-blue-400"
     },
     { 
       icon: <FaEnvelope />, 
@@ -203,7 +209,7 @@ const Contact = () => {
             </div>
 
             {/* Availability Status */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -216,7 +222,7 @@ const Contact = () => {
                   <p className="text-cyan-400 text-sm">Ready for new projects and opportunities</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Contact Form Section */}
