@@ -70,8 +70,8 @@ const Contact = () => {
     {
       icon: <FaWhatsapp className="text-2xl" />,
       title: "WhatsApp",
-      value: "+91 9309585720",
-      link: "https://wa.me/919309585720",
+      value: "+91 9527230560",
+      link: "https://wa.me/919527230560",
       color: "from-green-500 to-emerald-500",
     },
   ];
