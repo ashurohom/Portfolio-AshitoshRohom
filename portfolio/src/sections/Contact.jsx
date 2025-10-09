@@ -1,32 +1,48 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaPaperPlane, FaWhatsapp } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SiPeerlist } from "react-icons/si";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    user_name: "",  // Changed to match EmailJS template
+    user_email: "", // Changed to match EmailJS template  
+    user_phone: "", // Changed to match EmailJS template
     message: "",
   });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      alert("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setIsSubmitting(false);
-    }, 2000);
+
+    emailjs
+      .sendForm(
+        "service_btx2r4f",    // Your EmailJS Service ID
+        "template_gscm6zr",   // Your EmailJS Template ID
+        form.current,
+        "TlFtHXC6tHXqtMJK9"   // Your EmailJS Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully! I'll get back to you soon.");
+          console.log(result.text);
+          setFormData({ user_name: "", user_email: "", user_phone: "", message: "" });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          alert("❌ Failed to send message. Please try again.");
+          console.error(error.text);
+          setIsSubmitting(false);
+        }
+      );
   };
 
   const contactInfo = [
@@ -79,7 +95,8 @@ const Contact = () => {
       name: "Twitter",
       color: "hover:text-sky-400"
     },
-    { icon: <SiPeerlist />, 
+    { 
+      icon: <SiPeerlist />, 
       url: "https://peerlist.io/ashitoshrohom", 
       name: "Peerlist", 
       color: "hover:text-blue-400"
@@ -207,22 +224,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-
-            {/* Availability Status */}
-            {/* <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm rounded-3xl p-6 border border-cyan-400/20"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <div>
-                  <h4 className="text-white font-semibold">Currently Available</h4>
-                  <p className="text-cyan-400 text-sm">Ready for new projects and opportunities</p>
-                </div>
-              </div>
-            </motion.div> */}
           </motion.div>
 
           {/* Contact Form Section */}
@@ -237,14 +238,14 @@ const Contact = () => {
                 Let's start a conversation about your next project.
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={sendEmail} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-white text-sm font-medium">Your Name</label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="user_name" // Matches EmailJS template
+                      value={formData.user_name}
                       onChange={handleChange}
                       required
                       placeholder="Enter your name"
@@ -256,8 +257,8 @@ const Contact = () => {
                     <label className="text-white text-sm font-medium">Email Address</label>
                     <input
                       type="email"
-                      name="email"
-                      value={formData.email}
+                      name="user_email" // Matches EmailJS template
+                      value={formData.user_email}
                       onChange={handleChange}
                       required
                       placeholder="Enter your email"
@@ -270,8 +271,8 @@ const Contact = () => {
                   <label className="text-white text-sm font-medium">Phone Number</label>
                   <input
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
+                    name="user_phone" // Matches EmailJS template
+                    value={formData.user_phone}
                     onChange={handleChange}
                     placeholder="Enter your phone number"
                     className="w-full p-4 rounded-2xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-all duration-300"
@@ -281,7 +282,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-white text-sm font-medium">Your Message</label>
                   <textarea
-                    name="message"
+                    name="message" // Matches EmailJS template
                     value={formData.message}
                     onChange={handleChange}
                     required
@@ -324,18 +325,6 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Footer Note */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          className="text-center mt-16"
-        >
-          <p className="text-gray-400">
-            Made with ❤️ by Ashitosh Rohom • © 2024 All rights reserved
-          </p>
-        </motion.div> */}
       </div>
     </section>
   );

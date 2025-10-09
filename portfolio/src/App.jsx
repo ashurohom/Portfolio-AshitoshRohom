@@ -18,17 +18,17 @@ function App() {
       <Education />
       <Contact />
 
-      {/* Example sections for scroll testing */}
+      {/* Example sections for scroll testing 
       <section id="home" className="h-screen flex justify-center items-center">
-        {/* <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1> */}
-      </section>
+         <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1> 
+      </section>*/}
 
-      <section
+      {/* <section
         id="about"
         className="h-screen flex justify-center items-center bg-blue-50"
       >
         <h1 className="text-4xl font-semibold">About Me</h1>
-      </section>
+      </section> */}
       
 {/* Comment */}
     </div>
