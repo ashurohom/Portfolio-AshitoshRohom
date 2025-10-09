@@ -9,9 +9,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
-    user_name: "",  // Changed to match EmailJS template
-    user_email: "", // Changed to match EmailJS template  
-    user_phone: "", // Changed to match EmailJS template
+    user_name: "",  // match EmailJS template
+    user_email: "", // match EmailJS template  
+    user_phone: "", // match EmailJS template
     message: "",
   });
 
@@ -25,10 +25,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_btx2r4f",    // Your EmailJS Service ID
-        "template_gscm6zr",   // Your EmailJS Template ID
+        "service_btx2r4f",    // EmailJS Service ID
+        "template_gscm6zr",   // EmailJS Template ID
         form.current,
-        "TlFtHXC6tHXqtMJK9"   // Your EmailJS Public Key
+        "TlFtHXC6tHXqtMJK9"   // EmailJS Public Key
       )
       .then(
         (result) => {
@@ -56,8 +56,8 @@ const Contact = () => {
     {
       icon: <FaPhoneAlt className="text-2xl" />,
       title: "Phone",
-      value: "+91 9309585720",
-      link: "tel:+919309585720",
+      value: "+91 9527230560",
+      link: "tel:+919527230560",
       color: "from-cyan-500 to-blue-500",
     },
     {
