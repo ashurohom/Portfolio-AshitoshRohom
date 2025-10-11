@@ -9,6 +9,7 @@ import easymart from "../assets/easymart.jpeg";
 import library from "../assets/library.png";
 import corn from "../assets/corn.jpeg";
 
+// Ashitosh Project Section
 const projects = [
   {
     name: "Gurudatt Electrical Website",
