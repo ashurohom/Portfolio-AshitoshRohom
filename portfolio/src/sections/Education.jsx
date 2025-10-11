@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaGraduationCap, FaCertificate, FaExternalLinkAlt, FaUniversity, FaCalendar, FaStar, FaLinkedin, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
-// Import your certificate images
+// Import certificate images
 import certificate1 from "../assets/certificate1.png";
 import certificate2 from "../assets/certificate2.jpeg";
 import certificate3 from "../assets/certificate3.png";
