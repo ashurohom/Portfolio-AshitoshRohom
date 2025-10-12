@@ -7,6 +7,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = ["Home", "About", "Projects", "Education", "Contact"];
 
+  // Smooth scroll function
+  const handleSmoothScroll = (id) => {
+    const element = document.getElementById(id.toLowerCase());
+    if (element) {
+      const offsetTop = element.offsetTop - 20; // Adjust this value based on your navbar height
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsOpen(false); // Close mobile menu after click
+  };
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -33,14 +47,14 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
+              onClick={() => handleSmoothScroll(link.toLowerCase())}
               className="text-white font-medium relative group transition-all duration-300 hover:text-[#FF6B81]"
             >
               {link}
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#FF6B81] group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </button>
           ))}
         </div>
 
@@ -64,14 +78,13 @@ const Navbar = () => {
           className="md:hidden bg-[#1E293B] shadow-2xl py-6 flex flex-col items-center space-y-6"
         >
           {navLinks.map((link) => (
-            <a
+            <button
               key={link}
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleSmoothScroll(link.toLowerCase())}
               className="text-white text-lg font-semibold hover:text-[#FF6B81] transition-all"
             >
               {link}
-            </a>
+            </button>
           ))}
         </motion.div>
       )}
