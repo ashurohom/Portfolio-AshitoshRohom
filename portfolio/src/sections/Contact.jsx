@@ -112,7 +112,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-20 py-20 overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-20 py-20 overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] "
     >
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">

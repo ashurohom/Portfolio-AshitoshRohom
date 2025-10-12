@@ -1,4 +1,3 @@
-import { i } from "framer-motion/client";
 import Navbar from "./components/Navbar";
 import AboutMe from "./sections/AboutMe";
 import Experience from "./sections/Experience";
@@ -10,29 +9,34 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-white text-blue-900">
+    <div className="bg-white text-blue-900 scroll-pt-16"> {/* Add scroll-pt-16 here */}
       <Navbar />
-      <Home />
-      <AboutMe />
-      <Projects />
-      <Experience />
-      <Education />
-      <Contact />
-      <Footer />
-
-      {/* Example sections for scroll testing 
-      <section id="home" className="h-screen flex justify-center items-center">
-         <h1 className="text-5xl font-bold">Welcome to My Portfolio</h1> 
-      </section>*/}
-
-      {/* <section
-        id="about"
-        className="h-screen flex justify-center items-center bg-blue-50"
-      >
-        <h1 className="text-4xl font-semibold">About Me</h1>
-      </section> */}
       
-{/* Comment */}
+      <section id="home" className="scroll-mt-16">
+        <Home />
+      </section>
+      
+      <section id="about" className="scroll-mt-16">
+        <AboutMe />
+      </section>
+      
+      <section id="projects" className="scroll-mt-16">
+        <Projects />
+      </section>
+      
+      <section id="experience" className="scroll-mt-16">
+        <Experience />
+      </section>
+      
+      <section id="education" className="scroll-mt-16">
+        <Education />
+      </section>
+      
+      <section id="contact" className="scroll-mt-16">
+        <Contact />
+      </section>
+      
+      <Footer />
     </div>
   );
 }
