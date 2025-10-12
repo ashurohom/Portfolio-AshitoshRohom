@@ -1,24 +1,38 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { 
+  FaBars, 
+  FaTimes, 
+  FaHome, 
+  FaUser, 
+  FaCode, 
+  FaGraduationCap, 
+  FaEnvelope 
+} from "react-icons/fa";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = ["Home", "About", "Projects", "Education", "Contact"];
+  
+  const navLinks = [
+    { name: "Home", icon: <FaHome /> },
+    { name: "About", icon: <FaUser /> },
+    { name: "Projects", icon: <FaCode /> },
+    { name: "Education", icon: <FaGraduationCap /> },
+    { name: "Contact", icon: <FaEnvelope /> },
+  ];
 
   // Smooth scroll function
   const handleSmoothScroll = (id) => {
     const element = document.getElementById(id.toLowerCase());
     if (element) {
-      const offsetTop = element.offsetTop - 20; // Adjust this value based on your navbar height
-      
+      const offsetTop = element.offsetTop - 20;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
       });
     }
-    setIsOpen(false); // Close mobile menu after click
+    setIsOpen(false);
   };
 
   return (
@@ -44,15 +58,16 @@ const Navbar = () => {
           </h1>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - Simple with Icons */}
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
             <button
-              key={link}
-              onClick={() => handleSmoothScroll(link.toLowerCase())}
-              className="text-white font-medium relative group transition-all duration-300 hover:text-[#FF6B81]"
+              key={link.name}
+              onClick={() => handleSmoothScroll(link.name.toLowerCase())}
+              className="text-white font-medium relative group transition-all duration-300 hover:text-[#FF6B81] flex items-center gap-2"
             >
-              {link}
+              {link.icon}
+              {link.name}
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#FF6B81] group-hover:w-full transition-all duration-300"></span>
             </button>
           ))}
@@ -79,11 +94,12 @@ const Navbar = () => {
         >
           {navLinks.map((link) => (
             <button
-              key={link}
-              onClick={() => handleSmoothScroll(link.toLowerCase())}
-              className="text-white text-lg font-semibold hover:text-[#FF6B81] transition-all"
+              key={link.name}
+              onClick={() => handleSmoothScroll(link.name.toLowerCase())}
+              className="text-white text-lg font-semibold hover:text-[#FF6B81] transition-all flex items-center gap-3"
             >
-              {link}
+              {link.icon}
+              {link.name}
             </button>
           ))}
         </motion.div>
