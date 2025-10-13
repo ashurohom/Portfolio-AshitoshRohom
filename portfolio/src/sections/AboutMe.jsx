@@ -21,7 +21,7 @@ const AboutMe = () => {
   const stats = [
     { number: "1+", label: "Years Experience" },
     { number: "20+", label: "Projects Completed" },
-    { number: "10+", label: "Technologies" },
+    { number: "15+", label: "Technologies" },
     { number: "10+", label: "Certificate" },
   ];
 
