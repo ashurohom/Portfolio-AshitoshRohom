@@ -53,9 +53,11 @@ const Navbar = () => {
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300 }}
           />
-          <h1 className="text-white text-2xl font-bold tracking-wider">
-            ashitosh.rohom@gmail.com<span className="text-[#FF6B81]"></span>
-          </h1>
+        {/* <h1 className="text-sm font-medium tracking-wide text-cyan-300 hover:text-cyan-400 transition-colors">
+          ashitosh.rohom@gmail.com
+        </h1> */}
+
+
         </div>
 
         {/* Desktop Menu - Simple with Icons */}
