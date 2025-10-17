@@ -141,14 +141,23 @@ const Home = () => {
           className="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start mb-20"
         >
           {/* View Projects Button */}
-          <a
-            href="#projects"
+          <button
+            onClick={() => {
+              const element = document.getElementById('projects');
+              if (element) {
+                const offsetTop = element.offsetTop - 20;
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              }
+            }}
             className="group relative w-full sm:w-auto min-w-[200px] px-8 py-4 bg-gradient-to-r from-[#FF6B81] to-[#ff4f6f] text-white font-semibold rounded-2xl hover:shadow-xl hover:shadow-pink-500/25 transition-all duration-300 flex items-center gap-3 justify-center"
           >
             <span>View Projects</span>
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          </button>
 
           {/* Download Resume Button */}
           <button
@@ -159,15 +168,23 @@ const Home = () => {
             <FaDownload className="group-hover:animate-bounce" />
           </button>
 
-
           {/* Contact Me Button */}
-          <a
-            href="#contact"
+          <button
+            onClick={() => {
+              const element = document.getElementById('contact');
+              if (element) {
+                const offsetTop = element.offsetTop - 20;
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              }
+            }}
             className="group relative w-full sm:w-auto min-w-[200px] px-8 py-4 bg-gradient-to-r from-[#06B6D4] to-[#0EA5E9] text-white font-semibold rounded-2xl hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center gap-3 justify-center"
           >
             <span>Contact Me</span>
             <FaRocket className="group-hover:animate-pulse" />
-          </a>
+          </button>
         </motion.div>
 
         {/* Scroll Indicator - Animation Removed */}

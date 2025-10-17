@@ -44,15 +44,17 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex justify-between items-center h-16">
         
-        {/* Logo */}
-        <div className="flex items-center space-x-3">
-          <motion.img
-            src={logo}
-            alt="Logo"
-            className="h-10 w-10 rounded-full shadow-lg border border-white/20"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          />
+      {/* Logo */}
+      <div className="flex items-center space-x-3 ml-2 md:ml-0 lg:-ml-4 xl:-ml-6">
+        <motion.img
+          src={logo}
+          alt="Logo"
+          className="h-10 w-10 rounded-full shadow-lg border border-white/20"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        />
+
+
         {/* <h1 className="text-sm font-medium tracking-wide text-cyan-300 hover:text-cyan-400 transition-colors">
           ashitosh.rohom@gmail.com
         </h1> */}

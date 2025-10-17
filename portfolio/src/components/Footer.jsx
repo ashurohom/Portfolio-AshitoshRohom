@@ -89,7 +89,7 @@ const Footer = () => {
               Technologies
             </h3>
             <div className="flex flex-wrap gap-1">
-              {["Python", "Django", "React", "JavaScript", "PostgreSQL", "Tailwind", "Git", "Docker"].map((tech, index) => (
+              {["Python", "Django", "DRF", "React", "JavaScript", "HTML", "CSS", "Bootstrap", "PostgreSQL", "Tailwind", "Git", "SQL", "ODOO", "Netlify", "Docker"].map((tech, index) => (
                 <span
                   key={index}
                   className="px-2 py-1 bg-white/5 backdrop-blur-sm rounded-full text-xs text-gray-400 border border-white/10 hover:border-cyan-400/30 transition-all duration-300"

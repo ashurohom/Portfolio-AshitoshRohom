@@ -339,29 +339,38 @@ const Projects = () => {
 
         {/* CTA Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Interested in working together?
-            </h3>
-            <p className="text-gray-400 mb-6">
-              I'm always open to discussing new opportunities and exciting projects.
-            </p>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-2xl shadow-lg shadow-cyan-500/25 transition-all duration-300"
-            >
-              Let's Connect
-              <FaExternalLinkAlt className="text-sm" />
-            </motion.a>
-          </div>
-        </motion.div>
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="text-center mt-16"
+      >
+        <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Interested in working together?
+          </h3>
+          <p className="text-gray-400 mb-6">
+            I'm always open to discussing new opportunities and exciting projects.
+          </p>
+          <motion.button
+            onClick={() => {
+              const element = document.getElementById('contact');
+              if (element) {
+                const offsetTop = element.offsetTop - 20;
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-2xl shadow-lg shadow-cyan-500/25 transition-all duration-300"
+          >
+            Let's Connect
+            <FaExternalLinkAlt className="text-sm" />
+          </motion.button>
+        </div>
+      </motion.div>
       </div>
 
       {/* Hide scrollbar for different browsers */}
