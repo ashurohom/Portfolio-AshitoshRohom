@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import heroIllustration from "../assets/developer.svg";
 import { FaArrowRight, FaDownload, FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaCode, FaRocket } from "react-icons/fa";
 import { SiPeerlist } from "react-icons/si";
+import resumeFile from "../assets/RohomAshitosh_CV.pdf";
+
 
 const Home = () => {
+
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   const socialLinks = [
     { icon: <FaGithub />, url: "https://github.com/ashurohom", label: "GitHub" },
     { icon: <FaLinkedin />, url: "https://linkedin.com/in/ashitoshrohom", label: "LinkedIn" },
@@ -145,14 +151,14 @@ const Home = () => {
           </a>
 
           {/* Download Resume Button */}
-          <a
-            href="/Ashu_Resume.pdf"
-            download
+          <button
+            onClick={() => setIsResumeOpen(true)}
             className="group relative w-full sm:w-auto min-w-[200px] px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300 flex items-center gap-3 justify-center backdrop-blur-sm"
           >
             <span>Resume</span>
             <FaDownload className="group-hover:animate-bounce" />
-          </a>
+          </button>
+
 
           {/* Contact Me Button */}
           <a
@@ -202,6 +208,51 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+
+      {isResumeOpen && (
+      <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
+        <div className="bg-gray-900 p-6 rounded-2xl shadow-2xl w-[90%] md:w-[70%] lg:w-[60%] h-[80vh] relative border border-white/10 flex flex-col">
+          
+          {/* Header */}
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-white text-xl font-semibold">My Resume</h2>
+            <button
+              onClick={() => setIsResumeOpen(false)}
+              className="text-gray-400 hover:text-white text-2xl"
+            >
+              ✖
+            </button>
+          </div>
+
+          {/* Resume PDF Viewer */}
+          <div className="flex-1 overflow-hidden rounded-lg border border-white/10">
+            <iframe
+              src={resumeFile}
+              title="Resume PDF"
+              className="w-full h-full rounded-lg"
+            />
+          </div>
+
+          {/* Footer Buttons */}
+          <div className="flex justify-end mt-4 gap-4">
+            <a
+              href={resumeFile}
+              download="RohomAshitosh_CV.pdf"
+              className="px-6 py-2 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-all"
+            >
+              Download
+            </a>
+            <button
+              onClick={() => setIsResumeOpen(false)}
+              className="px-6 py-2 bg-gray-700 text-gray-300 font-semibold rounded-lg hover:bg-gray-600 transition-all"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
     </section>
   );
 };
