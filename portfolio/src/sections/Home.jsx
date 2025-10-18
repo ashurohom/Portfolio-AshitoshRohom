@@ -164,7 +164,7 @@ const Home = () => {
             onClick={() => setIsResumeOpen(true)}
             className="group relative w-full sm:w-auto min-w-[200px] px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all duration-300 flex items-center gap-3 justify-center backdrop-blur-sm"
           >
-            <span>Resume</span>
+            <span>View Resume</span>
             <FaDownload className="group-hover:animate-bounce" />
           </button>
 

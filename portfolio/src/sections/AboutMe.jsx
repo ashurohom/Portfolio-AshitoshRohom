@@ -25,6 +25,29 @@ const AboutMe = () => {
     { number: "10+", label: "Certificate" },
   ];
 
+  const philosophy = [
+    {
+      title: "Clean Code",
+      description: "Writing maintainable, scalable, and readable code that stands the test of time",
+      icon: "💻"
+    },
+    {
+      title: "User-First",
+      description: "Prioritizing user experience and accessibility in every project I build",
+      icon: "👥"
+    },
+    {
+      title: "Continuous Learning",
+      description: "Always staying updated with latest technologies and best practices",
+      icon: "📚"
+    },
+    {
+      title: "Problem Solving",
+      description: "Breaking down complex problems into simple, elegant solutions",
+      icon: "🔍"
+    }
+  ];
+
   return (
     <section
       id="about"
@@ -151,18 +174,18 @@ const AboutMe = () => {
           {/* Tabs Section - Increased width */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
             {/* Tab Headers */}
-            <div className="flex space-x-4 mb-6">
-              {["highlights", "skills"].map((tab) => (
+            <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
+              {["highlights", "skills", "philosophy"].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                  className={`px-4 py-3 rounded-xl font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                     activeTab === tab
                       ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg"
                       : "text-gray-400 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === "philosophy" ? "Philosophy" : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
               ))}
             </div>
@@ -209,6 +232,37 @@ const AboutMe = () => {
                       <span className="text-gray-300 font-medium text-sm md:text-base">
                         {skill}
                       </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+
+              {activeTab === "philosophy" && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                >
+                  {philosophy.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-cyan-400 transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="text-2xl">{item.icon}</div>
+                        <div>
+                          <h4 className="text-cyan-400 font-semibold text-lg mb-2">
+                            {item.title}
+                          </h4>
+                          <p className="text-gray-300 text-sm leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
