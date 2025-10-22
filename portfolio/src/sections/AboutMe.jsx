@@ -1,6 +1,22 @@
 import { motion } from "framer-motion";
 import myPhoto from "../assets/Ashitosh.png";
 import { useState } from "react";
+import {
+  FaPython,
+  FaReact,
+  FaJs,
+  FaGitAlt,
+  FaLinux,
+  FaDatabase,
+  FaCode,
+} from "react-icons/fa";
+import {
+  SiDjango,
+  SiTailwindcss,
+  SiPostgresql,
+  SiNetlify,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
 
 const AboutMe = () => {
   const [activeTab, setActiveTab] = useState("highlights");
@@ -13,39 +29,53 @@ const AboutMe = () => {
   ];
 
   const skills = [
-    "Python", "Django", "React", "JavaScript", 
-    "TailwindCSS","SQL", "PostgreSQL", "DRF", "REST APIs",
-    "Git", "Netlify", "Linux"
+    { name: "Python", icon: <FaPython /> },
+    { name: "Django", icon: <SiDjango /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "JavaScript", icon: <FaJs /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    { name: "SQL", icon: <FaDatabase /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    // Replaced non-existent SiDjangoRestFramework with FaCode
+    { name: "Django REST Framework", icon: <FaCode /> },
+    { name: "REST APIs", icon: <TbApi /> },
+    { name: "Git", icon: <FaGitAlt /> },
+    { name: "Netlify", icon: <SiNetlify /> },
+    { name: "Linux", icon: <FaLinux /> },
   ];
 
   const stats = [
     { number: "1+", label: "Years Experience" },
     { number: "20+", label: "Projects Completed" },
     { number: "15+", label: "Technologies" },
-    { number: "10+", label: "Certificate" },
+    { number: "10+", label: "Certificates" },
   ];
 
   const philosophy = [
     {
       title: "Clean Code",
-      description: "Writing maintainable, scalable, and readable code that stands the test of time",
-      icon: "💻"
+      description:
+        "Writing maintainable, scalable, and readable code that stands the test of time",
+      icon: "💻",
     },
     {
       title: "User-First",
-      description: "Prioritizing user experience and accessibility in every project I build",
-      icon: "👥"
+      description:
+        "Prioritizing user experience and accessibility in every project I build",
+      icon: "👥",
     },
     {
       title: "Continuous Learning",
-      description: "Always staying updated with latest technologies and best practices",
-      icon: "📚"
+      description:
+        "Always staying updated with latest technologies and best practices",
+      icon: "📚",
     },
     {
       title: "Problem Solving",
-      description: "Breaking down complex problems into simple, elegant solutions",
-      icon: "🔍"
-    }
+      description:
+        "Breaking down complex problems into simple, elegant solutions",
+      icon: "🔍",
+    },
   ];
 
   return (
@@ -53,16 +83,25 @@ const AboutMe = () => {
       id="about"
       className="relative min-h-screen flex items-center justify-center px-6 lg:px-20 py-20 overflow-hidden bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364]"
     >
-      {/* Enhanced Animated Background */}
+      {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob"></div>
-        <div className="absolute top-1/3 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-4000"></div>
-        <div className="absolute top-1/2 left-20 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-6000"></div>
+        <div className="absolute top-10 left-10 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div
+          className="absolute top-1/3 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/3 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
+          style={{ animationDelay: "4s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-20 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"
+          style={{ animationDelay: "6s" }}
+        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 items-center z-10">
-        {/* Left Side - Reduced width for photo and stats */}
+        {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
@@ -70,22 +109,19 @@ const AboutMe = () => {
           className="lg:col-span-2 relative"
         >
           <div className="relative group">
-            {/* Image Container - Reduced size for laptop */}
             <div className="relative mx-auto lg:mx-0 flex justify-center">
-              <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl inline-block max-w-full">
+              <div className="relative rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm bg-white/5 shadow-2xl inline-block">
                 <img
                   src={myPhoto}
                   alt="Ashitosh"
-                  className="max-w-[280px] max-h-[280px] w-auto h-auto object-contain transform group-hover:scale-103 transition duration-700"
+                  className="max-w-[280px] max-h-[280px] w-auto h-auto object-contain transform group-hover:scale-105 transition duration-700"
                 />
-                
-                {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
               </div>
             </div>
           </div>
 
-          {/* Name below photo */}
+          {/* Name */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -96,7 +132,7 @@ const AboutMe = () => {
             <p className="text-cyan-400 text-sm mt-2">Software Developer</p>
           </motion.div>
 
-          {/* Stats Grid - Reduced size */}
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -116,14 +152,14 @@ const AboutMe = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Side - Increased width for content */}
+        {/* Right Side */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-3 space-y-8"
         >
-          {/* Header */}
+          {/* Heading */}
           <div>
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
@@ -136,7 +172,6 @@ const AboutMe = () => {
                 Me
               </span>
             </motion.h2>
-            
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: 100 }}
@@ -152,26 +187,19 @@ const AboutMe = () => {
             transition={{ delay: 0.4 }}
             className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
           >
-            <p className="text-gray-300 text-lg leading-relaxed space-y-4 text-justify">
-              <span className="block">
-                I'm a Software Developer with over a year of experience, currently working at a
-                growing startup where I specialize in building Python-based backend systems.
-                My journey with computers began during my school days at home — inspired by my
-                brother, who is also a software developer.
-                I hold a B.Tech in Computer Engineering and have always been passionate about 
-                full-stack development, enjoying both the frontend creativity and backend logic.
-              
-                What sets me apart is my constant curiosity, problem-solving mindset, and belief
-                in writing clean, meaningful code that makes an impact. Beyond technology, I love
-                exploring networks, visiting temples, and find peace in devotion to Lord Krishna.
-              
-                I aim to grow continuously, achieve big milestones, and make a lasting mark in
-                the tech world.
-              </span>
+            <p className="text-gray-300 text-lg leading-relaxed text-justify">
+              I'm a Software Developer with over a year of experience, currently working at a
+              growing startup where I specialize in building Python-based backend systems.
+              My journey with computers began during my school days — inspired by my
+              brother, who is also a software developer. I hold a B.Tech in Computer Engineering
+              and have always been passionate about full-stack development, enjoying both the
+              frontend creativity and backend logic. Beyond technology, I love exploring networks,
+              visiting temples, and finding peace in devotion to Lord Krishna. My goal is to grow
+              continuously, achieve big milestones, and make a lasting mark in the tech world.
             </p>
           </motion.div>
 
-          {/* Tabs Section - Increased width */}
+          {/* Tabs */}
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
             {/* Tab Headers */}
             <div className="flex space-x-2 mb-6 overflow-x-auto pb-2">
@@ -185,12 +213,14 @@ const AboutMe = () => {
                       : "text-gray-400 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  {tab === "philosophy" ? "Philosophy" : tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === "philosophy"
+                    ? "Philosophy"
+                    : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
               ))}
             </div>
 
-            {/* Tab Content - More space for highlights */}
+            {/* Tab Content */}
             <div className="min-h-[200px]">
               {activeTab === "highlights" && (
                 <motion.ul
@@ -208,7 +238,7 @@ const AboutMe = () => {
                       className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 text-base"
                     >
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mr-4 flex-shrink-0" />
-                      <span className="leading-relaxed">{item}</span>
+                      <span>{item}</span>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -222,16 +252,19 @@ const AboutMe = () => {
                 >
                   {skills.map((skill, index) => (
                     <motion.div
-                      key={skill}
+                      key={skill.name}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.05 }}
                       className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 hover:border-cyan-400 transition-all duration-300"
                     >
-                      <span className="text-gray-300 font-medium text-sm md:text-base">
-                        {skill}
-                      </span>
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="text-2xl text-cyan-400">{skill.icon}</div>
+                        <span className="text-gray-300 font-medium text-sm md:text-base">
+                          {skill.name}
+                        </span>
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
