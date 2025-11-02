@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { FaCode, FaTrophy, FaTools, FaRocket, FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
-
+import { FaPython, FaGitAlt } from "react-icons/fa6";
+import { SiPostgresql, SiOdoo } from "react-icons/si";
+import { TbBrandHtml5 } from "react-icons/tb";
 // Ashitosh Experience Section
 const Experience = () => {
   const experiences = [
     {
       company: "DREAMWAREZ",
       role: "Software Developer (Python Backend)",
-      duration: "1+ Year",//"Jan 2025 – Present",
+      duration: "1+ Year",
       description:
         "Contributing to backend development at a growing startup. Designed, developed, and optimized multiple ERP modules and custom business applications.",
       highlights: [
@@ -16,7 +18,14 @@ const Experience = () => {
         "Integrated RESTful APIs and automated workflows for business processes.",
         "Collaborated in a full software lifecycle — from design to deployment."
       ],
-      technologies: ["Python", "Odoo ERP", "PostgreSQL", "XML", "Git"],
+      technologies: [
+        { name: "Python", icon: <FaPython /> },
+        { name: "Odoo ERP", icon: <SiOdoo /> },
+        // { name: "Odoo ERP", icon: <FaCode /> }, // Fallback icon 
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "XML", icon: <TbBrandHtml5 /> },
+        { name: "Git", icon: <FaGitAlt /> }
+      ],
       icon: <FaCode className="text-cyan-400" />,
       award: true,
     },
@@ -164,18 +173,23 @@ const Experience = () => {
                     <FaTools className="text-purple-400" />
                     Technologies & Tools
                   </h4>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <div className="flex flex-wrap gap-3 sm:gap-4">
                     {exp.technologies.map((tech, i) => (
-                      <motion.span
+                      <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.8 + i * 0.1 }}
                         whileHover={{ scale: 1.05 }}
-                        className="bg-white/10 backdrop-blur-sm text-cyan-300 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-medium border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
+                        className="bg-white/10 backdrop-blur-sm text-cyan-300 px-4 py-3 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300 flex items-center gap-3 min-w-[120px]"
                       >
-                        {tech}
-                      </motion.span>
+                        <div className="text-xl text-cyan-400">
+                          {tech.icon}
+                        </div>
+                        <span className="font-medium text-sm">
+                          {tech.name}
+                        </span>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -186,32 +200,6 @@ const Experience = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          className="text-center mt-12 sm:mt-16"
-        >
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-white/10">
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              Ready to build something amazing?
-            </h3>
-            <p className="text-gray-400 text-sm sm:text-base mb-6">
-              Let's collaborate and create impactful solutions together.
-            </p>
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-6 py-3 sm:px-8 sm:py-3 rounded-2xl shadow-lg shadow-cyan-500/25 transition-all duration-300 text-sm sm:text-base"
-            >
-              Get In Touch
-              <FaRocket className="text-sm" />
-            </motion.a>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );
