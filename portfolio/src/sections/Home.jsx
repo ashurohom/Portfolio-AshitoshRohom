@@ -98,11 +98,12 @@ const Home = () => {
           transition={{ delay: 0.6, duration: 1 }}
           className="text-gray-400 mt-6 max-w-xl mx-auto md:mx-0 text-lg leading-relaxed bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
         >
-          I build modern, scalable web applications using{" "}
-          <span className="text-cyan-400 font-semibold">Python</span>,{" "}
+          Building scalable web applications with{" "}
+          <span className="text-cyan-400 font-semibold">Django</span>,{" "}
           <span className="text-purple-400 font-semibold">React</span>, and{" "}
           <span className="text-pink-400 font-semibold">cutting-edge technologies</span>. 
-          Let's turn your ideas into reality with clean, efficient code.
+          Creating efficient, production-ready solutions that drive results.
+
         </motion.p>
 
         {/* Enhanced Social Links - Animation Removed from Icons */}
