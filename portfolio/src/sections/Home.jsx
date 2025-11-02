@@ -88,7 +88,7 @@ const Home = () => {
           <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
             Python Backend
           </span>{" "}
-          & Full Stack Developer
+          Developer
         </motion.h2>
 
         {/* Description */}
