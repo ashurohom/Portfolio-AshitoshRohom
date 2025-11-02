@@ -4,7 +4,7 @@ import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight, FaCode, FaEye }
 import GE from "../assets/GE.png";
 import portfolio from "../assets/portfolio.png";
 import mybuddy from "../assets/mybuddy.png";
-import blog from "../assets/blog.png";
+import blog from "../assets/Blog.png";
 import easymart from "../assets/easymart.jpeg";
 import library from "../assets/library.png";
 import corn from "../assets/corn.jpeg";
