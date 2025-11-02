@@ -86,7 +86,7 @@ const Home = () => {
           className="text-xl md:text-2xl lg:text-3xl text-gray-300 mt-4 font-light"
         >
           <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-            Backend Engineer
+            Python Backend
           </span>{" "}
           & Full Stack Developer
         </motion.h2>
