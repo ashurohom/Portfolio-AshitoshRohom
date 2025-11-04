@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       ))}
 
-      {/* Left Side - Enhanced Text Content */}
+      {/* Left Side - Enhanced Text Contents */}
       <div className="flex-1 text-center md:text-left mt-10 md:mt-0 relative z-10">
         {/* Badge */}
         <motion.div
