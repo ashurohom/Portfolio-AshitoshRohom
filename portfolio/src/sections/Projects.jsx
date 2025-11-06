@@ -27,7 +27,7 @@ const projects = [
     description:
       "A professional portfolio showcasing full-stack development expertise with a focus on modern design, responsive layouts, and optimized performance. It highlights projects built using React, Django, and TailwindCSS, reflecting creativity, technical proficiency.",
     tech: ["React", "TailwindCSS", "Framer Motion", "JavaScript"],
-    live: "https://yourportfolio.netlify.app/", // Update with your actual portfolio URL
+    live: "https://ashitoshrohom.netlify.app/", 
     github: "https://github.com/ashurohom/Portfolio-AshitoshRohom", 
     image: portfolio,
     category: "frontend",
