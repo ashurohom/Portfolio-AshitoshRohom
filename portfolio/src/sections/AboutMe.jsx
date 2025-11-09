@@ -20,14 +20,14 @@ import { TbApi } from "react-icons/tb";
 
 const AboutMe = () => {
   const [activeTab, setActiveTab] = useState("highlights");
-
+// Highlights array
   const highlights = [
     "Software Developer at DREAMWAREZ Company",
     "Passionate about backend and full-stack development",
     "Proficient in Python, Django, React, DRF, TailwindCSS",
     "Always exploring new technologies and improving daily",
   ];
-
+// Skills array with icons
   const skills = [
     { name: "Python", icon: <FaPython /> },
     { name: "Django", icon: <SiDjango /> },
