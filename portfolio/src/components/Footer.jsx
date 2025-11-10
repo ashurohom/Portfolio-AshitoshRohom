@@ -60,7 +60,7 @@ const Footer = () => {
               Full Stack Developer passionate about creating innovative solutions and bringing ideas to life through code.
             </p>
             
-            {/* Contact Info */}
+            {/* Contact Information */}
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-cyan-400 text-xs">
                 <FaEnvelope className="text-xs" />
