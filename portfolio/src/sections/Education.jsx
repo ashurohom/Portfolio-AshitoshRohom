@@ -114,7 +114,7 @@ const Education = () => {
           className="mb-16"
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10 shadow-2xl max-w-4xl mx-auto">
-            {/* Section Header */}
+            {/* Education Section Header */}
             <div className="flex items-center gap-4 mb-8">
               <div className="p-4 bg-white/10 rounded-2xl border border-white/20">
                 <FaGraduationCap className="text-3xl text-cyan-400" />
