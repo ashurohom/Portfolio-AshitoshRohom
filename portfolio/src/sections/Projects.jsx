@@ -77,6 +77,7 @@ const projects = [
     image: library,
     category: "backend"
   },
+  // Project 7
   {
     name: "Corn-Leaves-Diseases-Detection",
     description:
