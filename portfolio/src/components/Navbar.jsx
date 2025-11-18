@@ -22,7 +22,7 @@ const Navbar = () => {
     { name: "Contact", icon: <FaEnvelope /> },
   ];
 
-  // Smooth scroll function
+  // Smooth scroll function for navigation links
   const handleSmoothScroll = (id) => {
     const element = document.getElementById(id.toLowerCase());
     if (element) {
