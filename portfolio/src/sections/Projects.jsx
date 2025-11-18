@@ -23,6 +23,7 @@ const projects = [
     category: "web",
     featured: true
   },
+  // Project 2
     {
     name: "Portfolio-Ashitosh",
     description:
