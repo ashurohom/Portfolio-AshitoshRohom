@@ -35,6 +35,7 @@ const projects = [
     category: "frontend",
     featured: true
     },
+    // Project 3
   {
     name: "My Buddy",
     description:
