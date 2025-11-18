@@ -67,6 +67,7 @@ const projects = [
     category: "fullstack",
     
   },
+  // Project 6
   {
     name: "Library Store System",
     description:
