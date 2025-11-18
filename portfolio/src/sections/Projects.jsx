@@ -46,6 +46,7 @@ const projects = [
     category: "fullstack",
     featured: true
   },
+  // Project 4
   {
     name: "Blog App",
     description:
