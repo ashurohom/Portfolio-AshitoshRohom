@@ -77,7 +77,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button View*/}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Menu View*/}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
