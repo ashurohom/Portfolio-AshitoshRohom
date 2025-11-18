@@ -56,6 +56,7 @@ const projects = [
     image: blog,
     category: "fullstack"
   },
+  // Project 5
   {
     name: "Easy Mart eCommerce",
     description:
