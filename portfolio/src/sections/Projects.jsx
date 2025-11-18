@@ -12,6 +12,7 @@ import corn from "../assets/corn.jpeg";
 // Ashitosh Project Section
 const projects = [
   {
+    // Project 1
     name: "Gurudatt Electrical Website",
     description:
       "Gurudatt Electrical is a modern business portfolio website designed for an electrical company. It features a responsive layout, service showcase, and contact management system, all built using pure web technologies to ensure performance, accessibility, and a professional online presence.",
