@@ -8,6 +8,7 @@ import blog from "../assets/Blog.png";
 import easymart from "../assets/easymart.jpeg";
 import library from "../assets/library.png";
 import corn from "../assets/corn.jpeg";
+import taskflow from "../assets/TaskFlow.png";
 
 // Ashitosh Project Section
 const projects = [
@@ -35,7 +36,18 @@ const projects = [
     category: "frontend",
     featured: true
     },
-    // Project 3
+  // Project 3
+    {
+    name: "TaskFlow",
+    description:
+      "TaskFlow is a full-stack task manager built with Django REST Framework and React, deployed via Railway and Netlify. It marks the start of my advanced development journey with JWT auth, pagination, full CRUD, and my first fully deployed scalable full-stack project.",
+    tech: ["React", "TailwindCSS", "Framer Motion", "Git", "Django REST Framework", "Railway", "Netlify"],
+    live: "https://taskflowlive.netlify.app/", 
+    image: taskflow,
+    category: "fullstack",
+    featured: true
+    },
+    // Project 4
   {
     name: "My Buddy",
     description:
@@ -46,7 +58,7 @@ const projects = [
     category: "fullstack",
     featured: true
   },
-  // Project 4
+  // Project 5
   {
     name: "Blog App",
     description:
@@ -56,7 +68,7 @@ const projects = [
     image: blog,
     category: "fullstack"
   },
-  // Project 5
+  // Project 6
   {
     name: "Easy Mart eCommerce",
     description:
@@ -67,7 +79,7 @@ const projects = [
     category: "fullstack",
     
   },
-  // Project 6
+  // Project 7
   {
     name: "Library Store System",
     description:
@@ -77,7 +89,7 @@ const projects = [
     image: library,
     category: "backend"
   },
-  // Project 7
+  // Project 8
   {
     name: "Corn-Leaves-Diseases-Detection",
     description:
@@ -319,15 +331,29 @@ const Projects = () => {
                 initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 10 }}
-                onClick={scrollRight}
-                className="absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 text-white p-4 rounded-full group"                whileHover={{ scale: 1.1 }}
+                // 🔥 Bounce Animation Added
+                transition={{ type: "spring" }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                onClick={scrollRight}
+                className="absolute -right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-20 text-white p-4 rounded-full group"
               >
-                <FaArrowRight className="text-xl group-hover:text-cyan-400 transition-colors" />
+                <motion.div
+                  animate={{ y: [-4, 0, -4] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.2,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <FaArrowRight className="text-xl group-hover:text-cyan-400 transition-colors" />
+                </motion.div>
+
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             )}
           </AnimatePresence>
+
         </div>
 
         {/* Scroll Indicator */}
