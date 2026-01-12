@@ -9,9 +9,23 @@ import easymart from "../assets/easymart.jpeg";
 import library from "../assets/library.png";
 import corn from "../assets/corn.jpeg";
 import taskflow from "../assets/TaskFlow.png";
+import AP from "../assets/ap.png";
+
 
 // Ashitosh Project Section
 const projects = [
+  {
+    // Project 1
+    name: "AP-Constructions WebApp",
+    description:
+      "AP Constructions is a full-stack construction management system built with React and Django REST Framework. It manages workers, attendance, payroll, salary ledger, expenses, and secure authentication with real-world business logic.",
+    tech: ["React", "Django REST Framework", "Tailwind CSS", "Git", "MySQL", "Netlify", "Oracle Cloud", "Axios", "JWT Auth"],
+    live: "https://apconstruction.netlify.app/",
+    github: "https://github.com/ashurohom/",
+    image: AP,
+    category: "web",
+    featured: true
+  },
   {
     // Project 1
     name: "Gurudatt Electrical Website",
